@@ -1,0 +1,45 @@
+■■■ JDBC 사전설정 및 주의사항 ■■■
+
+○ 해당 워크스테이션에 오라클이 설치된 경우(학습 환경)
+    - 시스템의 classpath 를 다음과 같이 변경
+      (ex1. 11g Express Edition 설치 경로가 『 C:\oraclexe 』 인 경우...)
+      .;C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar
+
+      (ex2. 10g Enterprise Edition 설치 경로가 『 C:oracle 』 인 경우...)
+      .;C:\oracle\product\10.xxx\db_1\jdbc\lib\ojdbc14.jar
+
+
+○ 해당 워크스테이션에 오라클이 설치되어 있지 않은 경우(실무 환경)
+    - Oracle 용 JDBC 드라이버를 다운로드 해야 한다.
+
+      가. 다운로드 경로
+           ① 『 http://www.oracle.com 』 으로 이동
+           ② 『 Supprot(카테고리) 』 메뉴 클릭
+           ③ 『 Lifetime Support Policies 』 항목의  
+               『 Software Downloads 』 클릭
+           ④ 『 Dirvers and Utilities 』 클릭
+           ⑤ 『 JDBC Drivers 』 클릭
+           ⑥ 『 Oracle Database 11g Release 2 (11.2.0.4) drivers 』 클릭
+           ⑦ 『 ojdbc6.jar 』 클릭 → 다운로드
+
+      나. 대상 파일명
+           『 ojdbc6.jar 』 또는 『 ojdbc14.jar 』
+    
+      다. 시스템의 classpath 에 변수값으로 ojdbc6.jar(또는 ojdbc14.jar)
+           파일 추가(경로 포함)
+
+
+※ 공통
+    - JDBC 드라이버 설치를 위한 ojdbc6.jar 파일을
+      다음의 경로에 복사＆붙여넣기  
+
+     1.  C:\Program Files\Java\jdk1.8.0_211\jre\lib\ext
+
+     2. C:\Program Files\Java\jre1.8.0_211\lib\ext
+
+※ JSP＆Servlet 실습을 위한 추가 설정
+   - 웹 서버에서 실질적으로 Oracle 용 JDBC 드라이버를 찾는 경로는
+     『 아파치톰캣루드\lib 』 이므로 ojdbc6.jar 파일을
+     이 경로에 복사＆붙여넣기 한다.
+   
+   - 아파치 톰캣 다운로드 경로 → 『 http://tomcat.apache.org/ 』
